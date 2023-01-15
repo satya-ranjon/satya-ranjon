@@ -1,6 +1,6 @@
-# <center>Hi 👋, I'm Satya Ranjon</center>
+# <p style="text-align: center;">Hi 👋, I'm Satya Ranjon</p>
 
-# <center>A passionate frontend developer from Bangladesh</center>
+# <p style="text-align: center;">A passionate frontend developer from Bangladesh</p>
 
 ## 📫 How to reach me **satyaranjonofficial@gmail.com**
 
@@ -16,4 +16,5 @@
 
 # Languages and Tools
 
-[![My Skills](https://skills.thijs.gg/icons?i=js,react,scss,firebase,mongodb,mysql,html,css,bootstrap,redux,mui,express,nodejs)]
+[![My Skills](https://skills.thijs.gg/icons?i=js,react,scss,firebase,mongodb,mysql,html,css,bootstrap,redux,mui,express,nodejs,python,ts)
+
