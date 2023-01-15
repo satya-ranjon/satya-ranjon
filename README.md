@@ -1,6 +1,7 @@
-# <p style="text-align: center;">Hi 👋, I'm Satya Ranjon</p>
+ <h1 style="text-align: center;">Hi 👋, I'm Satya Ranjon</h1>
 
-# <p style="text-align: center;">A passionate frontend developer from Bangladesh</p>
+<h1 style="text-align: center;">A passionate frontend developer from Bangladesh</h1>
+
 
 ## 📫 How to reach me **satyaranjonofficial@gmail.com**
 
