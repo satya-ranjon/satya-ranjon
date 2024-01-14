@@ -38,6 +38,6 @@
 
 | GitHub Streak Stats                                                                         | GitHub Stats                                                                                                              |
 | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| ![GitHub Streak Stats](https://github-readme-streak-stats.herokuapp.com/?user=satya-ranjon) | ![GitHub Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=satya-ranjon&layout=compact&langs_count=8) |
+| [![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=satya-ranjon)](https://git.io/streak-stats) | ![GitHub Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=satya-ranjon&layout=compact&langs_count=8) |
 
 ---
