@@ -1,6 +1,6 @@
 <img src="./assets/banner.jpeg" />
 
-## Hi 👋, I'm Satya Ranjon
+## Hi 👋, I'm Satya Ranjon Sharma
 
 ### Passionate learner and developer, always exploring new technologies and seeking opportunities to enhance my skills
 
