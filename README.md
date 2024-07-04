@@ -12,9 +12,9 @@
 
 - 🔭 I’m currently working on **MERN Projects**
 
-- 🌱 I’m currently learning **Next.js**
+- 🌱 I’m currently learning **AWS**
 
-- 💬 Ask me about **JavaScript, Node.js, React.js, MongoDB, Express.js**
+- 💬 Ask me about **JavaScript, Node.js, React.js, Next.js, MongoDB, Express.js**
 
 - 📫 How to reach me **_<https://www.linkedin.com/in/satya-ranjon-sharma/>_**
 
@@ -30,8 +30,7 @@
 
 ## :computer: Technologies that I know
 
-![My Skills](https://skills.thijs.gg/icons?i=js,react,tailwind,mui,firebase,mongodb,html,css,bootstrap,express,nodejs,git)
-
+[![My Skills](https://skillicons.dev/icons?i=js,ts,react,nextjs,tailwind,mui,firebase,mongodb,mysql,express,nodejs,html,css,bootstrap,figma,)](https://skillicons.dev)
 ## :chart_with_upwards_trend: Current Stats
 
 ---
