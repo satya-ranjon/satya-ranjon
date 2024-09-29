@@ -14,7 +14,7 @@
 
 - 🌱 I’m currently learning **AWS**
 
-- 💬 Ask me about **JavaScript, Node.js, React.js, Next.js, MongoDB, Express.js**
+- 💬 Ask me about **JavaScript, TypeScript, Node.js, React.js, Next.js, MongoDB, Express.js**
 
 - 📫 How to reach me **_<https://www.linkedin.com/in/satya-ranjon-sharma/>_**
 
