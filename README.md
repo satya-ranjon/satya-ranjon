@@ -16,7 +16,7 @@
 
 - 💬 Ask me about **JavaScript, TypeScript, Node.js, React.js, Next.js, MongoDB, Express.js**
 
-- 📫 How to reach me **_<[https://www.linkedin.com/in/satya-ranjon-sharma/](https://www.linkedin.com/in/satya-ranjon/)>_**
+- 📫 How to reach me **_[https://www.linkedin.com/in/satya-ranjon-sharma/](https://www.linkedin.com/in/satya-ranjon/)_**
 
 ## :mailbox: Reach me out
 
