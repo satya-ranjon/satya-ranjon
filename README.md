@@ -52,6 +52,10 @@ production. Worth saying plainly.
   <img src="https://streak-stats.demolab.com?user=satya-ranjon&amp;type=png&amp;background=EDF1F6&amp;border=C6CEDA&amp;stroke=C6CEDA&amp;ring=4B3A86&amp;fire=8C5A14&amp;currStreakNum=121A25&amp;sideNums=121A25&amp;currStreakLabel=5A6675&amp;sideLabels=5A6675&amp;dates=5A6675" alt="GitHub contribution streak for satya-ranjon" height="195">
 </picture>
 <!-- langs:start -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/langs-dark.png">
+  <img src="./assets/langs-light.png" alt="Language breakdown across 112 repositories (public only): TypeScript 35.1%, Python 34.8%, JavaScript 19.3%, HTML 3.6%, and others." height="195">
+</picture>
 <!-- langs:end -->
 
 ### Reach me
