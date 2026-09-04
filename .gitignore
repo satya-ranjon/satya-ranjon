@@ -1,0 +1,8 @@
+# Local notes, not part of the public profile.
+# This repository is public — anything committed here is visible at
+# github.com/satya-ranjon/satya-ranjon, so keep working notes out of it.
+PROFILE-SETTINGS.md
+
+# Python build artefacts from running the scripts in scripts/.
+__pycache__/
+*.py[cod]

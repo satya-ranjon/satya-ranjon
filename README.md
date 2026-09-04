@@ -1,42 +1,57 @@
-<img src="./assets/banner.jpeg" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/banner-dark.png">
+  <img src="./assets/banner-light.png" alt="Satya Ranjan DebSharma — software engineer, Dhaka, Bangladesh. Open entries: FieldForge, B.Sc. Computer Science, VegMove, Software Engineer at Techsfera.">
+</picture>
 
-## Hi 👋, I'm Satya Ranjon Sharma
+## Satya Ranjan DebSharma
 
-### Passionate learner and developer, always exploring new technologies and seeking opportunities to enhance my skills
+Software engineer in Dhaka, Bangladesh.
 
----
+I build backends that have to stay correct when two people touch the same row at the same time — inventory
+ledgers, reservation logic, reporting that has to reconcile. Most of what I find interesting lives in that
+problem: idempotency, lock ordering, and invariants the database enforces rather than ones the application
+merely hopes for.
 
-## 📫 How to reach me **_<satyaranjonofficial@gmail.com>_**
+Currently at Techsfera, working on VegMove.
 
-## :eyes: Current overview
+### What I'm working on
 
-- 🔭 I’m currently working on **MERN Projects**
+**VegMove** — a live quick-commerce platform I ship to continuously. A NestJS backend behind a storefront
+and an admin console, with Flutter apps for the customer, warehouse, packing and delivery sides. In
+production and under active development, so most of my week is new features, fixes and performance work on
+a system people are using right now.
 
-- 🌱 I’m currently learning **AWS**
+`NestJS` `Prisma` `PostgreSQL` `Redis` `BullMQ` `SSE`
 
-- 💬 Ask me about **JavaScript, TypeScript, Node.js, React.js, Next.js, MongoDB, Nest.js Express.js**
+**FieldForge** — a field service marketplace I'm building on my own, to work through distributed system
+design deliberately rather than picking it up incidentally: service boundaries, a typed event contract, a
+ten-state work order machine, and the infrastructure around it. It is a scaffold at this stage — the design
+and the contracts are real, the services don't run yet.
 
-- 📫 How to reach me **_[https://www.linkedin.com/in/satya-ranjon-sharma/](https://www.linkedin.com/in/satya-ranjon/)_**
+`NestJS` `Drizzle` `MySQL` `React 19` `Terraform`
 
-## :mailbox: Reach me out
+**B.Sc. in Computer Science** at Uttara University, alongside full-time work. I came up through a diploma
+and self-teaching, so the theory I skipped is the part I'm most interested in filling in.
 
-<a href="https://twitter.com/satya_ranjon" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="satya_ranjon" height="30" width="40" /></a>
-<a href="https://www.linkedin.com/in/satya-ranjon-sharma/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="satya-ranjon-b75b61220" height="30" width="40" /></a>
-<a href="https://stackoverflow.com/users/16218908" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="16218908" height="30" width="40" /></a>
-<a href="https://fb.com/satyaranjonsharma" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="satyaranjon1" height="30" width="40" /></a>
-<a href="https://instagram.com/satya_ranjon" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="satya_ranjon" height="30" width="40" /></a>
+### Tools I reach for
 
-</p>
+[![TypeScript, Node.js, NestJS, Express, React, Next.js, Tailwind, PostgreSQL, MySQL, MongoDB, Prisma, Redis, Flutter, Docker, Git](https://skillicons.dev/icons?i=ts,nodejs,nestjs,express,react,nextjs,tailwind,postgres,mysql,mongodb,prisma,redis,flutter,docker,git&perline=8)](https://skillicons.dev)
 
-## :computer: Technologies that I know
+Mostly NestJS on the server, Express before that. PostgreSQL and MySQL, through Prisma or Drizzle. Redis and
+BullMQ for caching and background work. Flutter for mobile.
 
-[![My Skills](https://skillicons.dev/icons?i=js,ts,react,nextjs,tailwind,mui,firebase,mongodb,mysql,express,nodejs,html,css,bootstrap,figma,)](https://skillicons.dev)
-## :chart_with_upwards_trend: Current Stats
+Terraform, Kubernetes and GitHub Actions I've used on FieldForge, my own project, rather than run in
+production. Worth saying plainly.
 
----
+[![Terraform, Kubernetes, GitHub Actions](https://skillicons.dev/icons?i=terraform,kubernetes,githubactions&perline=3)](https://skillicons.dev)
 
-| GitHub Streak Stats                                                                         | GitHub Stats                                                                                                              |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| [![GitHub Streak](https://streak-stats.demolab.com?user=satya-ranjon)](https://git.io/streak-stats) | ![GitHub Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=satya-ranjon&layout=compact&langs_count=8) |
+### Stats
 
----
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=satya-ranjon&amp;type=png&amp;background=0F141C&amp;border=232C39&amp;stroke=232C39&amp;ring=A392E8&amp;fire=C9903A&amp;currStreakNum=E7ECF3&amp;sideNums=E7ECF3&amp;currStreakLabel=8A96A6&amp;sideLabels=8A96A6&amp;dates=8A96A6">
+  <img src="https://streak-stats.demolab.com?user=satya-ranjon&amp;type=png&amp;background=EDF1F6&amp;border=C6CEDA&amp;stroke=C6CEDA&amp;ring=4B3A86&amp;fire=8C5A14&amp;currStreakNum=121A25&amp;sideNums=121A25&amp;currStreakLabel=5A6675&amp;sideLabels=5A6675&amp;dates=5A6675" alt="GitHub contribution streak for satya-ranjon" height="195">
+</picture>
+
+### Reach me
+
+<satyaranjonofficial@gmail.com> · [LinkedIn](https://www.linkedin.com/in/satya-ranjon/) · [Stack Overflow](https://stackoverflow.com/users/16218908)
