@@ -17,7 +17,9 @@ ran out of free tier.
 Two other things fall out of owning the renderer:
 
   * With a token carrying `repo` scope the query sees private repositories, so the
-    card reflects the backend work instead of only what happens to be public.
+    card reflects the backend work instead of only what happens to be public. The
+    workflow falls back to the GITHUB_TOKEN every job already has, which reads
+    public data only — so the card renders with no setup, and a token upgrades it.
   * The card states its own scope in the footer — "public and private" or "public
     only" — computed from what the query actually returned. It cannot over-claim,
     because the label is derived from the data rather than written by hand.
@@ -30,6 +32,8 @@ a language chart".
 Usage:
     python3 scripts/make_langs_card.py --user satya-ranjon
         Reads the token from $GH_GRAPHQL_TOKEN and writes assets/langs-*.png.
+        In the workflow that variable is the STATS_TOKEN secret if one exists,
+        otherwise the built-in GITHUB_TOKEN.
 
     python3 scripts/make_langs_card.py --fixture tests/langs-fixture.json
         Renders from a saved API response. No network. This is how the layout was
@@ -368,20 +372,16 @@ def main() -> None:
             sys.exit(
                 "GH_GRAPHQL_TOKEN is empty.\n"
                 "\n"
-                "In the workflow it comes from a repository secret named STATS_TOKEN, so\n"
-                "an empty value means the secret does not exist yet or is named something\n"
-                "else. To add it:\n"
+                "The workflow always supplies one — the STATS_TOKEN secret if it exists,\n"
+                "otherwise the GITHUB_TOKEN every job gets automatically — so seeing this\n"
+                "in Actions means the env: block was changed or removed.\n"
                 "\n"
-                "  Settings -> Secrets and variables -> Actions -> Secrets tab\n"
-                "  -> New repository secret -> name it exactly STATS_TOKEN\n"
-                "  -> value is a classic personal access token with the `repo` scope\n"
-                "\n"
-                "Three things that look right but are not: the Variables tab instead of\n"
-                "the Secrets tab, a Dependabot or Codespaces secret instead of an Actions\n"
-                "one, and a trailing space in the name.\n"
-                "\n"
-                "To run this by hand instead:\n"
+                "Running it by hand needs a token of your own:\n"
                 "  GH_GRAPHQL_TOKEN=ghp_... python3 scripts/make_langs_card.py\n"
+                "\n"
+                "Or skip the network entirely and draw from the saved fixture:\n"
+                "  python3 scripts/make_langs_card.py --fixture tests/langs-fixture.json \\\n"
+                "      --out /tmp --no-readme\n"
             )
         repos = fetch(args.user, token)
 

@@ -5,9 +5,12 @@
 # commits PNGs, so the README points at files GitHub itself serves. Nothing about it
 # can rate-limit at page-view time.
 #
-# Setup, once: add a repository secret named STATS_TOKEN holding a classic personal
-# access token with the `repo` scope, then run this workflow by hand from the Actions
-# tab. Details are in PROFILE-SETTINGS.md.
+# No setup is required. Every job gets a GITHUB_TOKEN automatically, which is enough
+# to read public language data, so this works the first time you run it. Adding a
+# repository secret named STATS_TOKEN — a classic personal access token with the
+# `repo` scope — is optional, and the only thing it changes is that the card then
+# counts private repositories too. The card's footer states which of the two it used.
+# Details are in PROFILE-SETTINGS.md.
 
 name: language card
 
@@ -39,19 +42,20 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Check the token secret exists
-        # Fails before doing any work, and as a GitHub error annotation so the
-        # reason appears at the top of the run summary instead of partway down a
-        # log. This is the failure you get on day one, and again whenever the
-        # token expires, so it is worth making it say what to do.
+      - name: Report which token is in use
+        # Not a gate. Every job already has a GITHUB_TOKEN, and that is enough to
+        # read public language data, so the card works with no setup at all. The
+        # STATS_TOKEN secret is an upgrade: it is the only way to see private
+        # repositories. Whichever is used, the card's footer states its own scope,
+        # so it cannot claim more than it counted.
         env:
           STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
         run: |
-          if [ -z "${STATS_TOKEN:-}" ]; then
-            echo "::error title=STATS_TOKEN secret is missing::Add a classic personal access token with the repo scope under Settings -> Secrets and variables -> Actions -> Secrets tab -> New repository secret, named exactly STATS_TOKEN. Then re-run this workflow. Full steps are in PROFILE-SETTINGS.md."
-            exit 1
+          if [ -n "${STATS_TOKEN:-}" ]; then
+            echo "STATS_TOKEN is set: the card will include private repositories."
+          else
+            echo "::notice title=No STATS_TOKEN secret, using the built-in token::The card will count public repositories only, and its footer will say so. To include private repositories, add a classic personal access token with the repo scope as a repository secret named STATS_TOKEN, under Settings -> Secrets and variables -> Actions -> Secrets tab."
           fi
-          echo "secret is present"
 
       - name: Install fonts and Pillow
         run: |
@@ -61,7 +65,10 @@ jobs:
 
       - name: Render the card and fill in the README block
         env:
-          GH_GRAPHQL_TOKEN: ${{ secrets.STATS_TOKEN }}
+          # Prefer the secret, fall back to the token every job already has. The
+          # built-in one can read public data but cannot see private repositories,
+          # which is exactly the difference the footer reports.
+          GH_GRAPHQL_TOKEN: ${{ secrets.STATS_TOKEN || github.token }}
         run: python3 scripts/make_langs_card.py --user satya-ranjon
 
       - name: Commit, but only if something actually changed
