@@ -1,0 +1,67 @@
+# Regenerates the language card in this repository and fills in the README block.
+#
+# The card used to be a URL to github-readme-stats.vercel.app, which is one shared
+# free instance and was returning a broken image. This runs on our own schedule and
+# commits PNGs, so the README points at files GitHub itself serves. Nothing about it
+# can rate-limit at page-view time.
+#
+# Setup, once: add a repository secret named STATS_TOKEN holding a classic personal
+# access token with the `repo` scope, then run this workflow by hand from the Actions
+# tab. Details are in PROFILE-SETTINGS.md.
+
+name: language card
+
+on:
+  schedule:
+    # Mondays. Weekly rather than daily because the language mix barely moves in a
+    # day, and every run that finds a change makes a commit. The minute is off the
+    # hour on purpose: GitHub queues everything scheduled at :00 and runs it late.
+    - cron: "17 20 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: language-card
+  cancel-in-progress: false
+
+jobs:
+  render:
+    # Forks inherit the workflow file but not the secret, so skip rather than fail
+    # noisily in somebody else's clone.
+    if: github.repository == 'satya-ranjon/satya-ranjon'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install fonts and Pillow
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-liberation fonts-dejavu-core
+          python -m pip install --disable-pip-version-check --quiet pillow
+
+      - name: Render the card and fill in the README block
+        env:
+          GH_GRAPHQL_TOKEN: ${{ secrets.STATS_TOKEN }}
+        run: python3 scripts/make_langs_card.py --user satya-ranjon
+
+      - name: Commit, but only if something actually changed
+        run: |
+          set -euo pipefail
+          changed=$(git status --porcelain -- \
+            assets/langs-light.png assets/langs-dark.png README.md)
+          if [ -z "$changed" ]; then
+            echo "card and README are unchanged; nothing to commit"
+            exit 0
+          fi
+          echo "$changed"
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/langs-light.png assets/langs-dark.png README.md
+          git commit -m "chore: refresh the language card"
+          git push

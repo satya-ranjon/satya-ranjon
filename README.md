@@ -51,6 +51,8 @@ production. Worth saying plainly.
   <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=satya-ranjon&amp;type=png&amp;background=0F141C&amp;border=232C39&amp;stroke=232C39&amp;ring=A392E8&amp;fire=C9903A&amp;currStreakNum=E7ECF3&amp;sideNums=E7ECF3&amp;currStreakLabel=8A96A6&amp;sideLabels=8A96A6&amp;dates=8A96A6">
   <img src="https://streak-stats.demolab.com?user=satya-ranjon&amp;type=png&amp;background=EDF1F6&amp;border=C6CEDA&amp;stroke=C6CEDA&amp;ring=4B3A86&amp;fire=8C5A14&amp;currStreakNum=121A25&amp;sideNums=121A25&amp;currStreakLabel=5A6675&amp;sideLabels=5A6675&amp;dates=5A6675" alt="GitHub contribution streak for satya-ranjon" height="195">
 </picture>
+<!-- langs:start -->
+<!-- langs:end -->
 
 ### Reach me
 
