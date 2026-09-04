@@ -366,9 +366,22 @@ def main() -> None:
         token = os.environ.get("GH_GRAPHQL_TOKEN", "").strip()
         if not token:
             sys.exit(
-                "GH_GRAPHQL_TOKEN is not set.\n"
-                "In the workflow it comes from a repository secret. Locally:\n"
-                "  GH_GRAPHQL_TOKEN=ghp_... python3 scripts/make_langs_card.py"
+                "GH_GRAPHQL_TOKEN is empty.\n"
+                "\n"
+                "In the workflow it comes from a repository secret named STATS_TOKEN, so\n"
+                "an empty value means the secret does not exist yet or is named something\n"
+                "else. To add it:\n"
+                "\n"
+                "  Settings -> Secrets and variables -> Actions -> Secrets tab\n"
+                "  -> New repository secret -> name it exactly STATS_TOKEN\n"
+                "  -> value is a classic personal access token with the `repo` scope\n"
+                "\n"
+                "Three things that look right but are not: the Variables tab instead of\n"
+                "the Secrets tab, a Dependabot or Codespaces secret instead of an Actions\n"
+                "one, and a trailing space in the name.\n"
+                "\n"
+                "To run this by hand instead:\n"
+                "  GH_GRAPHQL_TOKEN=ghp_... python3 scripts/make_langs_card.py\n"
             )
         repos = fetch(args.user, token)
 

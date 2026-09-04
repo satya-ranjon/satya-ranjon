@@ -39,6 +39,20 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Check the token secret exists
+        # Fails before doing any work, and as a GitHub error annotation so the
+        # reason appears at the top of the run summary instead of partway down a
+        # log. This is the failure you get on day one, and again whenever the
+        # token expires, so it is worth making it say what to do.
+        env:
+          STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
+        run: |
+          if [ -z "${STATS_TOKEN:-}" ]; then
+            echo "::error title=STATS_TOKEN secret is missing::Add a classic personal access token with the repo scope under Settings -> Secrets and variables -> Actions -> Secrets tab -> New repository secret, named exactly STATS_TOKEN. Then re-run this workflow. Full steps are in PROFILE-SETTINGS.md."
+            exit 1
+          fi
+          echo "secret is present"
+
       - name: Install fonts and Pillow
         run: |
           sudo apt-get update -qq
