@@ -60,4 +60,4 @@ production. Worth saying plainly.
 
 ### Reach me
 
-<satyaranjonofficial@gmail.com> · [LinkedIn](https://www.linkedin.com/in/satya-ranjon/) · [Stack Overflow](https://stackoverflow.com/users/16218908)
+<hello@satyaranjan.com> · [LinkedIn](https://www.linkedin.com/in/satya-ranjon/) · [Stack Overflow](https://stackoverflow.com/users/16218908)
